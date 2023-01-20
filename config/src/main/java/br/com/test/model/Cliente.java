@@ -1,14 +1,14 @@
-package br.com.test.model;
+//package br.com.test.model;
 
-public class Cliente {
-
-    private String nome;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-}
+//public class Cliente {
+//
+//    private String nome;
+//
+//    public String getNome() {
+//        return nome;
+//    }
+//
+//   public void setNome(String nome) {
+//        this.nome = nome;
+//   }
+//}
