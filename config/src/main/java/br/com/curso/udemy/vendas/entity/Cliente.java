@@ -11,6 +11,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table( name = "cliente" )
 public class Cliente {
@@ -24,9 +33,21 @@ public class Cliente {
     private String nome;
 
     @OneToMany( mappedBy = "cliente" , fetch = FetchType.LAZY )
+    @JsonIgnore
     private Set<Pedido> pedidos;
+    
+    @Column(name = "cpf", length = 11)
+    private String cpf;
 
-    public Cliente() {
+    public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public Cliente() {
     }
 
     public Set<Pedido> getPedidos() {
