@@ -3,12 +3,9 @@ package br.com.curso.udemy.vendas.rest;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.aop.ThrowsAdvice;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +27,7 @@ import br.com.curso.udemy.vendas.repository.ClienteRepositoryImpl;
 public class ClienteController {
 
 	private ClienteRepositoryImpl clientes;
+
 
 	public ClienteController(ClienteRepositoryImpl clientes) {
 		this.clientes = clientes;
@@ -57,9 +55,11 @@ public class ClienteController {
 	@PostMapping(value = "/cliente")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public Cliente save(@RequestBody Cliente cliente) {
-
-		return clientes.save(cliente);
-
+          Cliente clienteSalvo = clientes.save(cliente);
+          
+          cliente.setId(clienteSalvo.getId());
+          
+          return clienteSalvo;
 	}
 
 	@DeleteMapping(value = "/cliente/{id}")

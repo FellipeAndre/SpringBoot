@@ -18,42 +18,42 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "tb_produto")
+@Table(name = "PRODUTO")
 public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Basic(optional = false)
-	@Column(name = "id_produto")
-	private Integer idProduto;
+	@Column(name = "id")
+	private Integer id;
 	
-	@Column(name = "nameProduct")
-	private String nameProduct;
+	@Column(name = "descricao")
+	private String descricao;
 	
-	@Column(name = "preco_produto")
-	private BigDecimal saleProduct;
+	@Column(name = "preco")
+	private BigDecimal preco;
 
 	public String getNameProduct() {
-		return nameProduct;
+		return descricao;
 	}
 
 	public void setNameProduct(String nameProduct) {
-		this.nameProduct = nameProduct;
+		this.descricao = nameProduct;
 	}
 
 	public BigDecimal getSaleProduct() {
-		return saleProduct;
+		return preco;
 	}
 
 	public void setSaleProduct(BigDecimal saleProduct) {
-		this.saleProduct = saleProduct;
+		this.preco = saleProduct;
 	}
 
 	public Integer getIdProduto() {
-		return idProduto;
+		return id;
 	}
 
 	public void setIdProduto(Integer idProduto) {
-		this.idProduto = idProduto;
+		this.id = idProduto;
 	}
 }

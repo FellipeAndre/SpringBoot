@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 

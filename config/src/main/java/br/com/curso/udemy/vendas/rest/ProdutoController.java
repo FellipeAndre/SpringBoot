@@ -25,6 +25,9 @@ public class ProdutoController {
 
 	private ProdutoRepositoryImpl repository;
 
+	public ProdutoController() {
+		// TODO Auto-generated constructor stub
+	}
     public ProdutoController(ProdutoRepositoryImpl repository) {
         this.repository = repository;
     }
